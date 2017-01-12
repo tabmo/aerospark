@@ -53,3 +53,7 @@ assemblyMergeStrategy in assembly := {
     }
   case _ => MergeStrategy.first
 }
+
+
+licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0"))
+bintrayOrganization := Some("tabmo")
