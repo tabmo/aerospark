@@ -2,23 +2,24 @@ import sbtassembly.MergeStrategy._
 
 name := "aerospike-spark"
 
-version := "1.1.5"
+version in ThisBuild := "1.1.6"
 
 organization := "com.aerospike"
 
-crossScalaVersions := Seq("2.10.6", "2.11.8")
 
-scalaVersion := "2.11.8"
+scalaVersion in ThisBuild := "2.11.8"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+//javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
 parallelExecution in test := false
 
 fork in test := true
 
+val sparkVersion = "2.1.0"
+
 libraryDependencies ++= Seq(
-  "org.apache.spark"           %% "spark-core"            % "2.0.0" % Provided,
-  "org.apache.spark"           %% "spark-sql"             % "2.0.0" % Provided,
+  "org.apache.spark"           %% "spark-core"            % sparkVersion % Provided,
+  "org.apache.spark"           %% "spark-sql"             % sparkVersion % Provided,
   "com.aerospike"              %  "aerospike-helper-java" % "1.0.6",
   "com.typesafe.scala-logging" %% "scala-logging-slf4j"   % "2.1.2",
   "org.scalatest"              %% "scalatest"             % "2.2.1" % Test
