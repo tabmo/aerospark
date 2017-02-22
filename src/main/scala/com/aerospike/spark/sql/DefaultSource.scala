@@ -15,7 +15,7 @@ import com.aerospike.client.Value
 import com.aerospike.client.AerospikeException
 import com.aerospike.client.ResultCode
 import com.aerospike.client.policy.GenerationPolicy
-import com.typesafe.scalalogging.slf4j.LazyLogging
+import com.typesafe.scalalogging.LazyLogging
 
 /**
   * This class provides implementations to the Spark load and save functions

@@ -10,9 +10,9 @@ import com.aerospike.client.Value
 import com.aerospike.client.query.Statement
 import com.aerospike.helper.query._
 import com.aerospike.helper.query.Qualifier.FilterOperation
-import com.typesafe.scalalogging.slf4j.LazyLogging
 import org.apache.spark.sql.types.ArrayType
 import org.apache.spark.sql.types.MapType
+import com.typesafe.scalalogging.LazyLogging
 
 
 case class AerospikePartition(index: Int, host: String) extends Partition
