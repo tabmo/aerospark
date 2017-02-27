@@ -2,7 +2,7 @@ import sbtassembly.MergeStrategy._
 
 name := "aerospike-spark"
 
-version in ThisBuild := "1.1.7"
+version in ThisBuild := "1.1.8"
 
 organization := "com.aerospike"
 
@@ -17,15 +17,24 @@ fork in test := true
 
 val sparkVersion = "2.1.0"
 
+resolvers in ThisBuild ++= Seq(
+                                "Artima Maven Repository" at "http://repo.artima.com/releases",
+                                "Tabmo Bintray" at "https://dl.bintray.com/tabmo/maven",
+                                Resolver.jcenterRepo,
+                                Resolver.sonatypeRepo("releases"),
+                                Resolver.sonatypeRepo("snapshots")
+                              )
+
+
 libraryDependencies ++= Seq(
                              "org.apache.spark" %% "spark-core" % sparkVersion % Provided,
                              "org.apache.spark" %% "spark-sql" % sparkVersion % Provided,
                              "com.aerospike" % "aerospike-helper-java" % "1.0.6",
                              "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0",
-                             "org.scalatest" %% "scalatest" % "2.2.1" % Test
+                             "org.scalatest" %% "scalatest" % "2.2.1" % Test,
+                             "com.aerospike" % "aerospike-helper-java" % "1.0.6"
                            )
 
-resolvers ++= Seq("Local Maven" at Path.userHome.asFile.toURI.toURL + ".m2/repository")
 
 cancelable in Global := true
 

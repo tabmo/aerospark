@@ -92,7 +92,7 @@ object AerospikeConfig {
     AerospikeConfig.SeedHost -> "127.0.0.1",
     AerospikeConfig.Port -> 3000,
     AerospikeConfig.SchemaScan -> 100,
-    AerospikeConfig.TimeOut -> 1000,
+    AerospikeConfig.TimeOut -> 60000,
     AerospikeConfig.NameSpace -> "test",
     AerospikeConfig.KeyColumn -> "__key",
     AerospikeConfig.DigestColumn -> "__digest",
@@ -107,7 +107,7 @@ object AerospikeConfig {
   defineProperty(Port, 3000)
 
   val TimeOut = "aerospike.timeout"
-  defineProperty(TimeOut, 1000)
+  defineProperty(TimeOut, 60000)
 
   val sendKey = "aerospike.sendKey"
   defineProperty(sendKey, false)

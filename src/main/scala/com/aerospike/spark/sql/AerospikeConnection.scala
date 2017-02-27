@@ -45,7 +45,7 @@ object AerospikeConnection {
     val timeOut:Int = config.get(AerospikeConfig.TimeOut) match {
       case i: Int => i
       case s: String => s.toInt
-      case None => 1000
+      case None => 60000
     }
     val clientPolicy = new ClientPolicy
     clientPolicy.timeout = timeOut
